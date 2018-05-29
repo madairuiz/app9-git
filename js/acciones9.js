@@ -1,6 +1,6 @@
 // JavaScript Document
 $(document).ready(function(e){
-	document.addEventListener("deviceready", onDeviceReady.false);
+	document.addEventListener("deviceready", onDeviceReady, false);
 });
 
 
@@ -19,7 +19,7 @@ function onDeviceReady(){
   function getPosition(){
   var options = {
   enebleHighAccuracy : true,
-  maximunAge: 3600000
+  maximumAge: 3600000
 }
 
   var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
@@ -32,7 +32,7 @@ function onDeviceReady(){
 	  'Altitude Accuracy: '  + position.coords.altitudeAccuracy  +'\n'+
 	  'Heading: '    + position.coords.heading  +'\n'+
 	  'Speed: '   + position.coords.speed  +'\n'+
-	  'Timestamp: '    + position.coords.timestamp  +'\n');
+	  'Timestamp: '    + position.timestamp  +'\n');
   };
     
 	function onError(error){
@@ -58,7 +58,7 @@ function onDeviceReady(){
    $('#aaccuracy').html(position.coords.altitudeAccuracy);
    $('#headingg').html(position.coords.heading);
    $('#speed').html(position.coords.speed);
-   $('#timestamp').html(position.coords.timestamp);
+   $('#timestamp').html(position.timestamp);
 	  };
 	  
 	  function onError(error){
